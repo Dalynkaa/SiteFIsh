@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>VelhVarm - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for("static",filename = "css/base.css") }}">
+    <script src="{{ url_for("static",filename = "js/base.js") }}"></script>
 </head>
 <body>
+    <nav role="navigation">
+        <div id="menuToggle" >
 
+            <input type="checkbox" onclick="openNav()" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+              <a href="#"><li>Главная</li></a>
+              <a href="#"><li>Завершенные турниры</li></a>
+              <a href="#"><li>Связь</li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        {% block body %}
+
+        {% endblock %}
+    </header>
 </body>
 </html>
